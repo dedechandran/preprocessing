@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-import preprocess.app.preprocessing as prep
+import app.preprocessing as prep
 
 app= Flask(__name__)
 
