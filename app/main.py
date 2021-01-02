@@ -1,7 +1,8 @@
 from flask import Flask, request, jsonify
-import preprocess as prep
+import preprocess.app.preprocessing as prep
 
 app= Flask(__name__)
+
 
 @app.route('/')
 def index():
