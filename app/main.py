@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import prepprocess as prep
 
 app= Flask(__name__)
@@ -12,6 +12,6 @@ def preprocess_one_sentence():
     req_data = request.get_json()
     text = req_data['text']
     preprocessed_text = prep.preprocess(text)
-    return {
+    return jsonify({
         "text": preprocessed_text
-    }
+    })
