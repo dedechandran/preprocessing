@@ -56,7 +56,7 @@ def preprocess_all(text_list):
     for index,text in enumerate(text_list):
         preprocessed_text = preprocess(text)
         if index % 2 == 0:
-            preprocessed_texts.append(','.join(preprocessed_text)
+            preprocessed_texts.append(','.join(preprocessed_text))    
         else:
             preprocessed_texts.append('؛'.join(preprocessed_text))
     return preprocessed_texts
