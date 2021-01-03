@@ -24,7 +24,7 @@ def preprocess_one_sentence():
 def preprocess_all():
   req_data = request.get_json()
   preprocessed = []
-  for(answer in req_data):
+  for answer in req_data:
     name = answer['name']
     answers = answer['answers']
     preprocessed_answers = prep.preprocess_all(answers)

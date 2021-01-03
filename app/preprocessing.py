@@ -53,7 +53,7 @@ def preprocess(text):
 
 def preprocess_all(text_list):
     preprocessed_texts = []
-    for(index,text in enumerate(text_list)):
+    for index,text in enumerate(text_list):
         preprocessed_text = preprocess(text)
         if(index % 2 == 0):
             preprocessed_texts.append(','.join(preprocessed_text)
