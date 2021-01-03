@@ -20,7 +20,7 @@ def preprocess_one_sentence():
         "dosen": '؛'.join(preprocessed_text_dosen)
     })
 
-@app.rout('preprocess-all',methods=['POST'])
+@app.route('preprocess-all',methods=['POST'])
 def preprocess_all():
   req_data = request.get_json()
   preprocessed = []
