@@ -19,3 +19,18 @@ def preprocess_one_sentence():
         "siswa": preprocessed_text_siswa,
         "dosen": '؛'.join(preprocessed_text_dosen)
     })
+
+@app.rout('preprocess-all',methods=['POST'])
+def preprocess_all():
+  req_data = request.get_json()
+  preprocessed = []
+  for(answer in req_data):
+    name = answer['name']
+    answers = answer['answers']
+    preprocessed_answers = prep.preprocess_all(answers)
+    preprocessed.append({
+      'name' : name,
+      'answers': preprocessed_answers
+    })
+  return jsonify(preprocessed)
+
