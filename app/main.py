@@ -23,6 +23,7 @@ def preprocess_one_sentence():
 @app.route('/preprocess-all',methods=['POST'])
 def preprocess_all():
   req_data = request.get_json()
+  
   preprocessed = []
   for answer in req_data:
     name = answer['name']
