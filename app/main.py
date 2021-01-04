@@ -33,5 +33,5 @@ def preprocess_all():
       'name' : name,
       'answers': preprocessed_answers
     })
-  return json.dumps(preprocessed, ensure_ascii=False)
+  return jsonify(preprocessed)
 
