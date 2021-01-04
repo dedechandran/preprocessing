@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+import json
 import app.preprocessing as prep
 
 app= Flask(__name__)
@@ -32,5 +33,5 @@ def preprocess_all():
       'name' : name,
       'answers': preprocessed_answers
     })
-  return jsonify(preprocessed)
+  return json.dumps(preprocessed, ensure_ascii=False)
 
