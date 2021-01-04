@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 import json
 import app.preprocessing as prep
 
@@ -33,5 +33,8 @@ def preprocess_all():
       'name' : name,
       'answers': preprocessed_answers
     })
-  return jsonify(preprocessed)
+  json_string = json.dumps(preprocessed,ensure_ascii = False)
+  #creating a Response object to set the content type and the encoding
+  response = Response(json_string,content_type="application/json; charset=utf-8" )
+  return response
 
